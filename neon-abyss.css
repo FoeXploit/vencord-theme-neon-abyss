@@ -1,0 +1,327 @@
+/**
+ * @name System24 (Neon Abyss)
+ * @description A breathtaking dark cyberpunk-inspired Discord theme with a vibrant neon palette, elegant typography, and dynamic glowing effects. Designed to match a dark background with neon accents. Based on the original System24 theme by refact0r, customized with my own style by FoeXploit.
+ * @author refact0r (original) / FoeXploit (modified)
+ * @version 1.0.0
+ * @invite nz87hXyvcy
+ * @website https://github.com/refact0r/system24
+ * @source https://github.com/refact0r/system24/blob/master/theme/system24-neon-abyss.theme.css
+ * @authorId 508863359777505290
+ * @authorLink https://www.refact0r.dev
+ */
+
+/* Import theme modules */
+@import url('https://refact0r.github.io/system24/build/system24.css');
+
+/* Import Google Fonts for premium typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono&display=swap');
+
+body {
+    /* Typography */
+    --font: 'Inter', 'DM Mono', sans-serif; /* Modern, sleek font for a premium feel */
+    --code-font: 'JetBrains Mono', 'DM Mono', monospace; /* Techy code font with ligatures */
+    font-weight: 300; /* Light weight for elegance */
+    font-size: 15px !important; /* Compact base font size */
+    letter-spacing: -0.015em; /* Tight spacing for a modern look */
+    line-height: 1.4; /* Balanced line height for readability */
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.8); /* Strong shadow for text clarity */
+    word-break: break-word; /* Handle long text in small windows */
+    overflow-wrap: break-word; /* Ensure text wraps properly */
+
+    /* Sizes */
+    --gap: 14px; /* Slightly tighter spacing for a polished look */
+    --divider-thickness: 1px; /* Thin divider for minimalism */
+    --border-thickness: 1px; /* Sleek borders */
+    --border-hover-transition: 0.4s cubic-bezier(0.2, 0.8, 0.3, 1); /* Smooth hover transition */
+
+    /* Animation/Transition Options */
+    --animations: on; /* Enable animations for a cinematic feel */
+    --list-item-transition: 0.4s cubic-bezier(0.2, 0.8, 0.3, 1); /* Smooth list transitions */
+    --dms-icon-svg-transition: 0.5s cubic-bezier(0.2, 0.8, 0.3, 1); /* Elegant icon transitions */
+
+    /* Top Bar Options */
+    --top-bar-height: 38px; /* Slim top bar for a sleek look */
+    --top-bar-button-position: titlebar; /* Buttons in titlebar */
+    --top-bar-title-position: left; /* Left-aligned title */
+    --subtle-top-bar-title: on; /* Subtle title for minimalism */
+
+    /* Window Controls */
+    --custom-window-controls: on; /* Custom controls for cohesion */
+    --window-control-size: 9px; /* Minimal controls for a clean look */
+
+    /* DMS Button Options */
+    --custom-dms-icon: custom; /* Custom icon for personality */
+    --dms-icon-svg-url: url('https://refact0r.github.io/system24/assets/dms-icon.svg'); /* Example SVG icon */
+    --dms-icon-svg-size: 70%; /* Smaller icon for refinement */
+    --dms-icon-color-before: var(--text-4); /* Muted icon color */
+    --dms-icon-color-after: var(--accent-2); /* Neon hover/selected color */
+    --custom-dms-background: color; /* Gradient background */
+    --dms-background-image-url: none; /* No image background */
+    --dms-background-image-size: cover; /* Default size */
+    --dms-background-color: linear-gradient(135deg, var(--accent-1), var(--accent-3)); /* Diagonal neon gradient */
+
+    /* Background Image Options */
+    --background-image: on; /* Enable background image */
+    --background-image-url: url('https://raw.githubusercontent.com/FoeXploit/vencord-theme-neon-abyss/refs/heads/main/assets/bg.jpg'); /* Default background image URL */
+    --background-image-size: cover; /* Ensure the image covers the entire background */
+    --background-image-position: center; /* Center the image */
+    --background-image-blur: 5px; /* Subtle blur for depth */
+    --background-image-opacity: 0.6; /* Slightly transparent to let UI elements stand out */
+
+    /* Transparency/Blur Options */
+    --transparency-tweaks: on; /* Enable transparency for a glassy effect */
+    --remove-bg-layer: off; /* Keep base layer */
+    --panel-blur: on; /* Enable blur for panels */
+    --blur-amount: 8px; /* Medium blur for a dreamy effect */
+    --bg-floating: hsla(220, 20%, 10%, 0.9); /* Semi-transparent background for floating panels */
+
+    /* Other Options */
+    --small-user-panel: on; /* Compact user panel */
+    --unrounding: on; /* Sharp corners for a cyberpunk aesthetic */
+    --custom-spotify-bar: on; /* Custom Spotify bar */
+    --ascii-titles: off; /* Disable ASCII titles for a sleek look */
+    --ascii-loader: none; /* No loader for minimalism */
+
+    /* Panel Labels */
+    --panel-labels: on; /* Labels for navigation */
+    --label-color: var(--text-4); /* Muted label color */
+    --label-font-weight: 400; /* Light weight for labels */
+}
+
+/* Color Options (Neon Abyss Palette) */
+:root {
+    --colors: on; /* Custom colors for a cohesive cyberpunk theme */
+
+    /* Text Colors */
+    --text-0: hsl(220, 20%, 10%); /* Text on colored backgrounds */
+    --text-1: hsl(0, 0%, 95%); /* Bright, readable primary text */
+    --text-2: hsl(220, 15%, 85%); /* Headings and highlights */
+    --text-3: hsl(220, 10%, 75%); /* Normal text */
+    --text-4: hsl(220, 15%, 60%); /* Muted text/icons */
+    --text-5: hsl(220, 10%, 40%); /* Very muted text (timestamps) */
+
+    /* Background and Dark Colors */
+    --bg-1: hsl(220, 20%, 15%); /* Darkest buttons (clicked) */
+    --bg-2: hsl(220, 20%, 12%); /* Dark buttons */
+    --bg-3: hsl(220, 20%, 10%); /* Secondary elements */
+    --bg-4: hsl(220, 25%, 8%); /* Deep dark main background */
+    --hover: hsla(200, 80%, 60%, 0.15); /* Subtle neon blue hover */
+    --active: hsla(200, 80%, 60%, 0.25); /* Neon blue active/selected */
+    --active-2: hsla(200, 80%, 60%, 0.35); /* Stronger active state */
+    --message-hover: hsla(220, 20%, 10%, 0.1); /* Subtle message hover */
+
+    /* Accent Colors */
+    --accent-1: hsl(160, 60%, 40%); /* Dark green for primary accents */
+    --accent-2: hsl(200, 80%, 60%); /* Neon blue for secondary accents */
+    --accent-3: hsl(260, 70%, 60%); /* Neon purple for tertiary accents */
+    --accent-4: hsl(160, 55%, 35%); /* Slightly darker green for buttons */
+    --accent-5: hsl(200, 75%, 55%); /* Muted blue for button hover */
+    --accent-new: hsl(260, 70%, 60%); /* Neon purple for mute/deafen buttons */
+    --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 80%) 50%, transparent); /* Blue mention background */
+    --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 85%) 50%, transparent); /* Mention hover */
+    --reply: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 80%) 50%, transparent); /* Reply background */
+    --reply-hover: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 85%) 50%, transparent); /* Reply hover */
+
+    /* Status Indicator Colors */
+    --online: hsl(160, 60%, 40%); /* Dark green */
+    --dnd: hsl(0, 80%, 60%); /* Neon red */
+    --idle: hsl(200, 80%, 60%); /* Neon blue */
+    --streaming: hsl(260, 70%, 60%); /* Neon purple */
+    --offline: var(--text-5); /* Muted offline */
+
+    /* Border Colors */
+    --border-light: hsla(200, 80%, 60%, 0.15); /* Subtle neon blue borders */
+    --border: hsla(200, 80%, 60%, 0.25); /* Normal neon blue borders */
+    --border-hover: var(--accent-2); /* Vibrant neon blue border on hover */
+    --button-border: transparent; /* No button borders */
+}
+
+/* Ensure the background image is applied with transparency */
+.app-1q1i1E, .app-2rEoOp {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), var(--background-image-url) !important;
+    background-size: var(--background-image-size) !important;
+    background-position: var(--background-image-position) !important;
+    backdrop-filter: blur(var(--background-image-blur)) !important;
+    opacity: var(--background-image-opacity) !important;
+}
+
+/* Optimize panels with a glassy, blurred effect */
+.sidebar-2K8pFh, .container-3w7J-x, .chat-3bRxxu {
+    background: hsla(220, 20%, 10%, 0.85) !important; /* Semi-transparent panel backgrounds */
+    border: var(--border-thickness) solid var(--border-light); /* Subtle border */
+    backdrop-filter: blur(var(--blur-amount)); /* Glassy blur effect */
+    position: relative;
+}
+.sidebar-2K8pFh::before, .container-3w7J-x::before, .chat-3bRxxu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-3)); /* Gradient overlay */
+    opacity: 0.05; /* Subtle overlay for depth */
+    filter: blur(5px); /* Soft blur for a glowing effect */
+    transition: opacity 0.4s ease, filter 0.4s ease;
+}
+.sidebar-2K8pFh:hover::before, .container-3w7J-x:hover::before, .chat-3bRxxu:hover::before {
+    opacity: 0.15; /* Enhanced glow on hover */
+    filter: blur(6px); /* Slightly stronger blur on hover */
+}
+
+/* Ensure no checkered pattern in transparent areas */
+.bg-h5JY_x {
+    background: transparent !important; /* Allow background image to show through */
+}
+
+/* Force smaller text for specific elements */
+.channelName-2gHXaa, .title-3qD0b-, .name-23uc3R, .message-2qnXI6, .username-2BIR9-, .members-1998pB .content-3YMskv, .activityText-2v305O, .input-3X3CoP, .button-38aScr, .lookFilled-1Gx00P {
+    font-size: 14px !important; /* Smaller for key UI elements */
+}
+
+/* Override Discord's default text sizes */
+* {
+    font-size: inherit !important; /* Inherit from body's 15px */
+}
+
+/* Adjust message content for a glowing neon aesthetic */
+.messageContent-2qWWxC, .markup-2BOw-j {
+    font-size: 14px !important; /* Smaller message text */
+    color: var(--text-1); /* Bright primary text */
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.8), 0 0 4px var(--accent-2); /* Neon glow with shadow */
+    transition: text-shadow 0.4s ease, color 0.4s ease;
+}
+.messageContent-2qWWxC:hover, .markup-2BOw-j:hover {
+    text-shadow: 0 0 6px var(--accent-2), 0 0 12px var(--accent-2); /* Stronger neon glow on hover */
+    color: var(--text-1); /* Keep bright white */
+}
+
+/* Adjust channel and server list text */
+.name-3_Dsmg, .channelName-3stJzi {
+    font-size: 13px !important; /* Smaller channel/server names */
+}
+
+/* Adjust settings and modal text */
+.standardSidebarView-3F1I7i, .modal-3c3bKg, .content-ySCtCx {
+    font-size: 14px !important; /* Smaller text in settings and modals */
+}
+
+/* Handle long text in channel and server names */
+.channelName-2gHXaa, .name-3_Dsmg, .channelName-3stJzi {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Truncate long text with ellipsis */
+}
+
+/* Vibrant Neon Hover Effect for Voice and Text Channels */
+.channelName-2gHXaa:hover, .name-3_Dsmg:hover {
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2)); /* Green to blue gradient */
+    filter: blur(0.8px) brightness(1.3); /* Strong neon glow */
+    text-shadow: 0 0 8px var(--accent-1), 0 0 16px var(--accent-2); /* Vibrant neon glow */
+    box-shadow: 0 0 12px var(--accent-1), inset 0 0 6px var(--accent-2); /* Glowing border */
+    transform: scale(1.04); /* Dynamic pop */
+    transition: background 0.4s ease, filter 0.4s ease, text-shadow 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+/* Vibrant Neon Username Hover Effect */
+.username-2BIR9-:hover {
+    background: linear-gradient(90deg, transparent, var(--accent-3)); /* Purple gradient */
+    filter: blur(0.6px) brightness(1.2); /* Soft neon blur */
+    text-shadow: 0 0 6px var(--accent-3), 0 0 12px var(--accent-3); /* Neon purple glow */
+    box-shadow: 0 0 10px var(--accent-3); /* Subtle glow */
+    transform: scale(1.03);
+    transition: background 0.4s ease, filter 0.4s ease, text-shadow 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+/* Vibrant Neon Pulse Button Animation */
+.button-38aScr, .lookFilled-1Gx00P {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(45deg, var(--accent-4), var(--accent-5)); /* Green to blue button gradient */
+    border: none !important;
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.3, 1), filter 0.4s ease, box-shadow 0.4s ease;
+}
+.button-38aScr:hover, .lookFilled-1Gx00P:hover {
+    transform: scale(1.06); /* Stronger pop */
+    filter: blur(0.4px) brightness(1.3); /* Vibrant neon blur */
+    box-shadow: 0 0 15px var(--accent-2), 0 0 20px var(--accent-3); /* Intense neon glow */
+}
+.button-38aScr::after, .lookFilled-1Gx00P::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, var(--accent-2) 20%, transparent 80%); /* Neon blue pulse */
+    opacity: 0;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(4px); /* Enhanced neon pulse */
+    transition: width 0.5s ease, height 0.5s ease, opacity 0.5s ease;
+}
+.button-38aScr:hover::after, .lookFilled-1Gx00P:hover::after {
+    width: 250px;
+    height: 250px;
+    opacity: 0.5; /* More visible pulse */
+}
+
+/* Vibrant Neon Gradient Trail for Links */
+a[href] {
+    position: relative;
+    color: var(--accent-2);
+    text-decoration: none;
+    transition: color 0.4s ease, filter 0.4s ease, text-shadow 0.4s ease;
+}
+a[href]::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(90deg, var(--accent-2), var(--accent-3)); /* Blue to purple */
+    filter: blur(1.5px); /* Stronger blurred trail */
+    transition: width 0.4s cubic-bezier(0.2, 0.8, 0.3, 1), filter 0.4s ease;
+}
+a[href]:hover::after {
+    width: 100%;
+    filter: blur(2.5px) brightness(1.4); /* Enhanced neon blur */
+}
+a[href]:hover {
+    text-shadow: 0 0 6px var(--accent-2), 0 0 12px var(--accent-3); /* Neon glow */
+}
+
+/* Vibrant Neon Depth for Message Hover */
+.message-2qnXI6:hover {
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2)); /* Green to blue gradient */
+    box-shadow: 0 0 12px var(--accent-1), inset 0 0 6px var(--accent-2); /* Neon glow */
+    filter: blur(0.3px) brightness(1.2); /* Stronger neon blur */
+    transform: scale(1.03); /* Subtle pop */
+    transition: box-shadow 0.4s ease, background 0.4s ease, filter 0.4s ease, transform 0.4s ease;
+}
+
+/* Vibrant Neon Icon Scaling */
+.icon-3AqZ2e {
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.3, 1), filter 0.4s ease;
+}
+.icon-3AqZ2e:hover {
+    transform: scale(1.15); /* Stronger pop */
+    filter: drop-shadow(0 0 6px var(--accent-2)) blur(0.4px) brightness(1.5); /* Vibrant neon glow */
+}
+
+/* Vibrant Neon Panel Hover with Depth */
+.sidebar-2K8pFh, .container-3w7J-x, .chat-3bRxxu {
+    transition: box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.2, 0.8, 0.3, 1), filter 0.4s ease;
+}
+.sidebar-2K8pFh:hover, .container-3w7J-x:hover, .chat-3bRxxu:hover {
+    box-shadow: 0 0 15px var(--accent-2), inset 0 0 8px var(--accent-1); /* Vibrant neon glow */
+    transform: translateY(-4px); /* Stronger lift for depth */
+    filter: blur(0.2px) brightness(1.2); /* Subtle neon blur */
+}
+
+/* Justera fontstorlek och vikt för antalet medlemmar i röstkanaler */
+.voiceChannelMemberCount, .memberCountText {
+    font-size: 12px !important; /* Mindre fontstorlek */
+    font-weight: normal !important; /* Normal vikt för att minska fetthet */
+}
